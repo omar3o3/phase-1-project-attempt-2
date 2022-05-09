@@ -3,6 +3,11 @@ h1 {
     text-align: center;
 }
 
+#clear-button {
+    background-color: #555555;
+    color: white;
+    border-radius: 10%;
+}
 .wrapper {
     position: relative;
     display: flex;
