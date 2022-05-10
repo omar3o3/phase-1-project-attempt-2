@@ -61,13 +61,42 @@ body{
     text-align: center;
   }
   
+  .birth-div{
+    display:flex;
+    /* flex: 1; */
+    align-items:baseline;
+    text-align: center;
+    vertical-align: middle;
+    text-align: center;
+  } 
+  
+  .species-div{
+    display:flex;
+    /* flex: 1; */
+    align-items:baseline;
+    text-align: center;
+    vertical-align: middle;
+    text-align: center;
+  } 
+  
+  .ancestry-div{
+    display:flex;
+    /* flex: 1; */
+    align-items:baseline;
+    text-align: center;
+    vertical-align: middle;
+    text-align: center;
+  } 
+  
   .search-result{
     flex: 1;
     align-items: center;
     border:1px solid black;
     /* text-align: center; */
     list-style-position: inside;
+    text-align: center;
   }
+  
   
   .container-for-selections{
     flex: 1;
@@ -76,7 +105,6 @@ body{
   
   #search-header{
     text-align: center;
-    color: black;
   }
   
   #selected-class-header{
@@ -85,14 +113,44 @@ body{
   
   #search-result-list{
     font-size: 30px;
-    /* background-color: lightgrey; */
+    background-color: rgba(187, 189, 187, .50);
   }
-
-  #clearList {
-    margin: 0;
-    position: absolute;
-    top: 180px;;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+  
+  #class-selected-list{
+    font-size: 30px;
+    background-color: rgba(187, 189, 187, .50);
+  }
+  
+  .visible-learn-more{
+    display: none;
+  }
+  
+  .profile-bar{
+    font-size: 25px;
+  }
+  
+  .input{
+    background-color: rgba(187, 189, 187, .50);
+    font-size: 30px;
+  }
+  
+  .dark-mode {
+    background-image: url('https://wallpaperboat.com/wp-content/uploads/2020/08/12/52469/hogwarts-02.jpg');
+    object-fit: initial;
+    /* color: white; */
+  }
+  
+  #mode {
+    background-color: black;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  border-radius: 10% 30% 50% 70%;
+  position: absolute;
+  top: 5px;
+  left: 5px;
   }
