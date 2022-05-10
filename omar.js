@@ -5,7 +5,10 @@ let dataFetch = () => {
 dataFetch();
 
 let searchBar = document.getElementById('search-bar');
-let charactersReturnedList = document.getElementById('character-collection');
+let charactersReturnedList = document.getElementById('search-result-list');
+let nameInput = document.getElementById('name-input')
+let houseInput = document.getElementById('house-input')
+let profileImage = document.getElementById('character-image')
 
 
 let someFunction = (data) => {
@@ -21,6 +24,14 @@ let someFunction = (data) => {
                             listOfCharacters;
                             listOfCharacters.textContent = character.name;
 
+                            // Mark - NEWLY ADDED at 10:30 AM - Clear List Button
+                            let button = document.getElementById('clearList')
+                            button.addEventListener('click', (e) => {
+                                    document.getElementById('search-result-list').innerHTML='';
+                                })
+                            
+                                
+
                             listOfCharacters.addEventListener('mouseover' , onHoverFunction);
                             listOfCharacters.addEventListener('mouseout' , offHoverFunction);
 
@@ -28,15 +39,17 @@ let someFunction = (data) => {
                                 data.find(character =>{
                                     // console.log(character.name === event.target.textContent)
                                     if (character.name === event.target.textContent){
-                                        console.log(character);
-                                        
+                                        // console.log(character);
+                                        nameInput.textContent = character.name;
+                                        houseInput.textContent = character.house;
+                                        if (character.image !== ""){
+                                            profileImage.src = character.image;
+                                        } if (character.image === ""){
+                                            profileImage.src = 'https://cdn-icons-png.flaticon.com/512/1600/1600953.png'; 
+                                        }
                                     }
                                 })
                             })
-
-
-
-
                             charactersReturnedList.append(listOfCharacters);
                     } 
             })
@@ -51,11 +64,3 @@ let onHoverFunction = event =>{
 let offHoverFunction = event => {
     event.target.style.color = "black";
 }
-
-// let onClickFunction = (event , data) =>{
-//     let characterDesired = event.target.textContent
-//     console.log(characterDesired);
-//     data.find(element =>{ 
-//         console.log(element.name === characterDesired)
-//     })
-// }

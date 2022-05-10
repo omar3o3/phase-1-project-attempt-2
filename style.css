@@ -1,55 +1,98 @@
-h1 {
-    font-family: fantasy;
-    text-align: center;
-}
-
-#clear-button {
-    background-color: #555555;
-    color: white;
-    border-radius: 10%;
-}
-.wrapper {
-    position: relative;
-    display: flex;
-    min-width: 100px;
+body{
+    background-image: url('https://images.ctfassets.net/usf1vwtuqyxm/71J6YPxNauhFABbjHpGluJ/631bd6980b0a430d5b476ef331abb2b5/release_1_hogwarts.png');
+    object-fit:initial ;
   }
-
-.search-icon {
-    position: absolute;
-    top: 6px;
-    left: 400px;
-    width: 14px;
-  }
-
-  .clear-icon {
-    position: absolute;
-    top: 8px;
-    right: 340px;
-    width: 10px;
-    cursor: pointer;
-    <!-- visibility: hidden; -->
-  }
-
-  .search {
-    border: 1px solid grey;
-    border-radius: 5px;
-    height: 20px;
-    width: 30%;
-    padding: 2px 23px 2px 15px;
-    outline: 0;
-    background-color: #f5f5f5;
-    position: absolute;
-    left: 475px;
-
-  }
-
-  #hogwarts {
-      position: absolute;
-      top: 200px;
-      left: 500px;
-      width: 450px;
-      height: 350px;
-      
-  }
-
   
+  #title{
+    margin: auto;
+    text-align: center;
+  }
+  
+  .wrapper{
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  input {
+    width: 400px;
+  }
+  
+  .profile-bar{
+    position: relative;
+    width: 350px;
+    /* margin: auto; */
+    /* text-align: center; */
+  }
+  
+  #character-image{
+    height: 300px;
+    width: 300px;
+  }
+  
+  .div-box-for-float{
+    display: flex;
+  }
+  
+  .profile-bar{
+    /* display:flex; */
+    flex: 1;
+    border:1px solid black;
+    text-align: center;
+  }
+  
+  .name-div{
+    display:flex;
+    /* flex: 1; */
+    align-items:baseline;
+    text-align: center;
+    vertical-align: middle;
+    text-align: center;
+  } 
+  
+  
+  .house-div{
+    display:flex;
+    /* flex: 1; */
+    align-items:baseline;
+    text-align: left;
+    vertical-align: middle;
+    text-align: center;
+  }
+  
+  .search-result{
+    flex: 1;
+    align-items: center;
+    border:1px solid black;
+    /* text-align: center; */
+    list-style-position: inside;
+  }
+  
+  .container-for-selections{
+    flex: 1;
+    border:1px solid black;
+  }
+  
+  #search-header{
+    text-align: center;
+    color: black;
+  }
+  
+  #selected-class-header{
+    text-align: center;
+  }
+  
+  #search-result-list{
+    font-size: 30px;
+    /* background-color: lightgrey; */
+  }
+
+  #clearList {
+    margin: 0;
+    position: absolute;
+    top: 180px;;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
