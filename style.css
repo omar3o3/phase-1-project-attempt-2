@@ -1,156 +1,172 @@
+@font-face{
+  src: url(fonts/HARRYP__.TTF);
+  font-family: harryP;
+}
+
 body{
-  background-image: url('https://images.ctfassets.net/usf1vwtuqyxm/71J6YPxNauhFABbjHpGluJ/631bd6980b0a430d5b476ef331abb2b5/release_1_hogwarts.png');
-  object-fit:initial ;
-}
+    background-image: url('https://images.ctfassets.net/usf1vwtuqyxm/71J6YPxNauhFABbjHpGluJ/631bd6980b0a430d5b476ef331abb2b5/release_1_hogwarts.png');
+    object-fit:initial ;
+    font-family: harryP;
+  }
 
-#title{
-  margin: auto;
+  .btn {
+    font-family: harryP;
+    font-size: 15px;;
+  }
+
+  #title{
+    margin: auto;
+    text-align: center;
+    font-size: 30px;
+    
+  }
+
+  .wrapper{
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  input {
+    width: 400px;
+  }
+  
+  .profile-bar{
+    position: relative;
+    width: 350px;
+    /* margin: auto; */
+    /* text-align: center; */
+  }
+  
+  #character-image{
+    height: 300px;
+    width: 300px;
+  }
+  
+  .div-box-for-float{
+    display: flex;
+  }
+  
+  .profile-bar{
+    /* display:flex; */
+    flex: 1;
+    border:1px solid black;
+    text-align: center;
+  }
+  
+  .name-div{
+    display:flex;
+    /* flex: 1; */
+    align-items:baseline;
+    text-align: center;
+    vertical-align: middle;
+    text-align: center;
+  } 
+  
+  
+  .house-div{
+    display:flex;
+    /* flex: 1; */
+    align-items:baseline;
+    text-align: left;
+    vertical-align: middle;
+    text-align: center;
+  }
+  
+  .birth-div{
+    display:flex;
+    /* flex: 1; */
+    align-items:baseline;
+    text-align: center;
+    vertical-align: middle;
+    text-align: center;
+  } 
+  
+  .species-div{
+    display:flex;
+    /* flex: 1; */
+    align-items:baseline;
+    text-align: center;
+    vertical-align: middle;
+    text-align: center;
+  } 
+  
+  .ancestry-div{
+    display:flex;
+    /* flex: 1; */
+    align-items:baseline;
+    text-align: center;
+    vertical-align: middle;
+    text-align: center;
+  } 
+  
+  .search-result{
+    flex: 1;
+    align-items: center;
+    border:1px solid black;
+    /* text-align: center; */
+    list-style-position: inside;
+    text-align: center;
+  }
+  
+  
+  .container-for-selections{
+    flex: 1;
+    border:1px solid black;
+  }
+  
+  #search-header{
+    text-align: center;
+  }
+  
+  #selected-class-header{
+    text-align: center;
+  }
+  
+  #search-result-list{
+    font-size: 30px;
+    background-color: rgba(187, 189, 187, .50);
+  }
+  
+  #class-selected-list{
+    font-size: 30px;
+    background-color: rgba(187, 189, 187, .50);
+  }
+  
+  .visible-learn-more{
+    display: none;
+  }
+  
+  .profile-bar{
+    font-size: 25px;
+  }
+  
+  .input{
+    background-color: rgba(187, 189, 187, .50);
+    font-size: 30px;
+  }
+  
+  .dark-mode {
+    background-image: url('https://wallpaperboat.com/wp-content/uploads/2020/08/12/52469/hogwarts-02.jpg');
+    object-fit: initial;
+    color: white;
+  }
+  
+  #mode {
+    background-color: black;
+  border: none;
+  color: white;
+  padding: 15px 32px;
   text-align: center;
-}
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius: 10% 30% 50% 70%;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  font-family: harryP;
+  }
 
-.wrapper{
-  margin: auto;
-  width: 60%;
-  padding: 10px;
-  text-align: center;
-}
-
-input {
-  width: 400px;
-}
-
-.profile-bar{
-  position: relative;
-  width: 350px;
-  /* margin: auto; */
-  /* text-align: center; */
-}
-
-#character-image{
-  height: 300px;
-  width: 300px;
-}
-
-.div-box-for-float{
-  display: flex;
-}
-
-.profile-bar{
-  /* display:flex; */
-  flex: 1;
-  border:1px solid black;
-  text-align: center;
-}
-
-.name-div{
-  display:flex;
-  /* flex: 1; */
-  align-items:baseline;
-  text-align: center;
-  vertical-align: middle;
-  text-align: center;
-} 
-
-
-.house-div{
-  display:flex;
-  /* flex: 1; */
-  align-items:baseline;
-  text-align: left;
-  vertical-align: middle;
-  text-align: center;
-}
-
-.birth-div{
-  display:flex;
-  /* flex: 1; */
-  align-items:baseline;
-  text-align: center;
-  vertical-align: middle;
-  text-align: center;
-} 
-
-.species-div{
-  display:flex;
-  /* flex: 1; */
-  align-items:baseline;
-  text-align: center;
-  vertical-align: middle;
-  text-align: center;
-} 
-
-.ancestry-div{
-  display:flex;
-  /* flex: 1; */
-  align-items:baseline;
-  text-align: center;
-  vertical-align: middle;
-  text-align: center;
-} 
-
-.search-result{
-  flex: 1;
-  align-items: center;
-  border:1px solid black;
-  /* text-align: center; */
-  list-style-position: inside;
-  text-align: center;
-}
-
-
-.container-for-selections{
-  flex: 1;
-  border:1px solid black;
-}
-
-#search-header{
-  text-align: center;
-}
-
-#selected-class-header{
-  text-align: center;
-}
-
-#search-result-list{
-  font-size: 30px;
-  background-color: rgba(187, 189, 187, .50);
-}
-
-#class-selected-list{
-  font-size: 30px;
-  background-color: rgba(187, 189, 187, .50);
-}
-
-.visible-learn-more{
-  display: none;
-}
-
-.profile-bar{
-  font-size: 25px;
-}
-
-.input{
-  background-color: rgba(187, 189, 187, .50);
-  font-size: 30px;
-}
-
-.dark-mode {
-  background-image: url('https://wallpaperboat.com/wp-content/uploads/2020/08/12/52469/hogwarts-02.jpg');
-  object-fit: initial;
-  /* color: white; */
-}
-
-#mode {
-  background-color: black;
-border: none;
-color: white;
-padding: 15px 32px;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 10px;
-border-radius: 10% 30% 50% 70%;
-position: absolute;
-top: 5px;
-left: 5px;
-}
+  * {cursor: url(https://cur.cursors-4u.net/user/use-1/use160.cur), auto !important;} 

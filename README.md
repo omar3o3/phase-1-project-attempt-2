@@ -19,3 +19,10 @@ Challenges
 How Are We Meeting Requirements
 - Building three unique event listeners that allow the user to have the most possible interacvitiy
 
+<<<<<<< HEAD
+=======
+
+![hogwarts](https://user-images.githubusercontent.com/102488171/167460939-5227dea2-4b0c-4d70-85fd-31ecf0779677.jpeg)
+
+
+>>>>>>> 7340e82d560a143c23336ad347753ca14f281480
