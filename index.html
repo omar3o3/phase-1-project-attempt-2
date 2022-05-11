@@ -5,12 +5,12 @@
     <title>Flatiron Harry Potter Database</title>
     <link rel="stylesheet" href="style.css">
     <script defer type="text/javascript" src="omar.js"></script>
+    
 </head>
 <body>
     <div id = 'title'>
-        <h1>Welcome to Flatiron Harry Potter Database</h1>
+        <h1 class="theTitle">Welcome to Flatiron Harry Potter Database</h1>
     </div>
-
     <div>
       <button id='mode' onclick="darkMode()">Dark <br>
           Mode</button>
@@ -27,10 +27,10 @@
           <img id = 'character-image' src="https://cdn-icons-png.flaticon.com/512/1600/1600953.png" alt="search result image">
         </div>
         <div id = 'add-to-class-div'>
-          <button type = 'button' id = 'add-to-class-button'>Add to Your Class</button>
+          <button class='btn' type = 'button' id = 'add-to-class-button'>Add to Your Class</button>
         </div>
         <div>
-          <button onclick="myFunction()">Learn More</button>
+          <button class='btn' onclick="myFunction()">Learn More</button>
         </div>
         <div class = 'name-div'>
           <h3 id = 'name:' class = 'input'>Name:</h3>
@@ -62,7 +62,7 @@
           </h2>
         </div>
         <div>
-          <button id="clearList">Clear List</button>
+          <button class='btn' type='button' id="clearList">Clear List</button>
         </div>
         <div>
           <ul id = 'search-result-list'></ul>

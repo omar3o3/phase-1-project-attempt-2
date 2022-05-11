@@ -1,13 +1,26 @@
+@font-face{
+  src: url(fonts/HARRYP__.TTF);
+  font-family: harryP;
+}
+
 body{
     background-image: url('https://images.ctfassets.net/usf1vwtuqyxm/71J6YPxNauhFABbjHpGluJ/631bd6980b0a430d5b476ef331abb2b5/release_1_hogwarts.png');
     object-fit:initial ;
+    font-family: harryP;
   }
-  
+
+  .btn {
+    font-family: harryP;
+    font-size: 15px;;
+  }
+
   #title{
     margin: auto;
     text-align: center;
+    font-size: 30px;
+    
   }
-  
+
   .wrapper{
     margin: auto;
     width: 60%;
@@ -137,7 +150,7 @@ body{
   .dark-mode {
     background-image: url('https://wallpaperboat.com/wp-content/uploads/2020/08/12/52469/hogwarts-02.jpg');
     object-fit: initial;
-    /* color: white; */
+    color: white;
   }
   
   #mode {
@@ -148,9 +161,12 @@ body{
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 10px;
+  font-size: 15px;
   border-radius: 10% 30% 50% 70%;
   position: absolute;
   top: 5px;
   left: 5px;
+  font-family: harryP;
   }
+
+  * {cursor: url(https://cur.cursors-4u.net/user/use-1/use160.cur), auto !important;} 
