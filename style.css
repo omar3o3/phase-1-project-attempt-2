@@ -1,5 +1,5 @@
 @font-face{
-  src: url(fonts/HARRYP__.TTF);
+  src: url(font/HARRYP__.TTF);
   font-family: harryP;
 }
 
@@ -9,9 +9,13 @@ body{
     font-family: harryP;
   }
 
-  .btn {
+  /* .btn {
     font-family: harryP;
-    font-size: 15px;;
+    font-size: 15px;
+  } */
+
+  h2{
+    background-color: rgba(187, 189, 187, .50);
   }
 
   @keyframes colorRotate {

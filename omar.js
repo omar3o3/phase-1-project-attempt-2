@@ -65,16 +65,18 @@ let displaySelectedCharacter = (listOfCharacters , initialSearchResults) =>{
 }
 
 addClassButton.addEventListener('click' , () =>{
-    let selectedClassNewLi = document.createElement('li');
-    selectedClassNewLi.textContent = nameInput.textContent;
-    classSelectedList.append(selectedClassNewLi);
-
-    nameInput.textContent = '';
-    houseInput.textContent = '';
-    profileImage.src = 'https://cdn-icons-png.flaticon.com/512/1600/1600953.png';
-    speciesInput.textContent = ''; 
-    birthInput.textContent = '';
-    ancestryInput.textContent = '';
+    if (nameInput.textContent != ''){
+        let selectedClassNewLi = document.createElement('li');
+        selectedClassNewLi.textContent = nameInput.textContent;
+        classSelectedList.append(selectedClassNewLi);
+    
+        nameInput.textContent = '';
+        houseInput.textContent = '';
+        profileImage.src = 'https://cdn-icons-png.flaticon.com/512/1600/1600953.png';
+        speciesInput.textContent = ''; 
+        birthInput.textContent = '';
+        ancestryInput.textContent = '';
+    }
 })
 
 let inputChecker = (initialSearchResults , key , displayedInput) =>{
