@@ -38,7 +38,8 @@ let searchBarListener = (data) =>{
 
 let displayInitialResults = (initialSearchResults) =>{
     initialSearchResults.forEach(character => {
-        let listOfCharacters = document.createElement('li');
+        let listOfCharacters = document.createElement('div');
+        listOfCharacters.classList.add('input');
         listOfCharacters.textContent = character.name;
         charactersReturnedList.append(listOfCharacters);
         displaySelectedCharacter(listOfCharacters , character)
@@ -66,7 +67,8 @@ let displaySelectedCharacter = (listOfCharacters , initialSearchResults) =>{
 
 addClassButton.addEventListener('click' , () =>{
     if (nameInput.textContent != ''){
-        let selectedClassNewLi = document.createElement('li');
+        let selectedClassNewLi = document.createElement('div');
+        selectedClassNewLi.classList.add('input');
         selectedClassNewLi.textContent = nameInput.textContent;
         classSelectedList.append(selectedClassNewLi);
     

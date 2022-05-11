@@ -30,6 +30,9 @@ body{
     animation: colorRotate 10s infinite;
     text-align: center;
     transform: translateY(-50%);
+    font-size: 80px;
+    padding-top: 60px;
+    /* background-color: rgba(187, 189, 187, .50); */
   }
 
   #title{
@@ -145,11 +148,14 @@ body{
   #search-result-list{
     font-size: 30px;
     background-color: rgba(187, 189, 187, .50);
+    padding: 0px;
   }
   
   #class-selected-list{
     font-size: 30px;
     background-color: rgba(187, 189, 187, .50);
+    padding: 0px;
+    text-align: center;
   }
   
   .visible-learn-more{
@@ -162,9 +168,13 @@ body{
   
   .input{
     background-color: rgba(187, 189, 187, .50);
-    font-size: 30px;
+    font-size: 40px;
   }
   
+  .sub-headers{
+    font-size: 50px;
+  }
+
   .dark-mode {
     background-image: url('https://wallpaperboat.com/wp-content/uploads/2020/08/12/52469/hogwarts-02.jpg');
     object-fit: initial;
@@ -172,7 +182,7 @@ body{
   }
   
   #mode {
-    background-color: black;
+  background-color: black;
   border: none;
   color: white;
   padding: 15px 32px;
