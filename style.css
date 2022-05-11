@@ -150,7 +150,7 @@ body{
   .dark-mode {
     background-image: url('https://wallpaperboat.com/wp-content/uploads/2020/08/12/52469/hogwarts-02.jpg');
     object-fit: initial;
-    color: white;
+    /* color: white; */
   }
   
   #mode {
