@@ -14,13 +14,27 @@ body{
     font-size: 15px;;
   }
 
+  @keyframes colorRotate {
+    from, to { color: darkred; }
+    25%      { color: darkgreen; }
+    50%      { color: darkblue; }
+    75%      { color: rgb(157, 157, 5) }
+  }
+
+  .theTitle {
+    color: rgb(236,100,75);
+    animation: colorRotate 10s infinite;
+    text-align: center;
+    transform: translateY(-50%);
+  }
+
   #title{
     margin: auto;
     text-align: center;
     font-size: 30px;
-    
+    animation-name: colorRotate;
   }
-
+  
   .wrapper{
     margin: auto;
     width: 60%;
