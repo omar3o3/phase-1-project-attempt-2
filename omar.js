@@ -42,8 +42,6 @@ searchBar.addEventListener('click' , event=>{
         }
 })
 
-
-
 let displayInitialResults = (initialSearchResults) =>{
     initialSearchResults.forEach(character => {
         let listOfCharacters = document.createElement('div');
@@ -108,9 +106,6 @@ addClassButton.addEventListener('click' , () =>{
     }
 })
 
-
-
-
 let deleteCharacter = (event) =>{
     event.target.parentElement.remove();
 }
@@ -138,12 +133,6 @@ let clearSearchBar = () =>{
         }
     })
 }
-// clearListButton.addEventListener('click', () => {
-//     if (searchBar.value !== ''){
-//         document.getElementById('search-result-list').textContent='';
-//     }
-// })
-
 
 let onHoverFunction = event =>{
     event.target.style.color = "orange";
