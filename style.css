@@ -43,7 +43,11 @@ body{
   .wrapper{
     margin: auto;
     width: 60%;
+<<<<<<< HEAD
     padding: 20px;
+=======
+    padding: 10px;
+>>>>>>> main
     text-align: center;
   }
   
