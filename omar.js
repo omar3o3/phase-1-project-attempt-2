@@ -24,13 +24,31 @@ let classSelectedList = document.getElementById('class-selected-list')
 
 let clearListButton = document.getElementById('clearList');
 
+
+
+// let namePointer = document.getElementById('name:');
+// let housePointer = document.getElementById('house:');
+// let speciesPointer = document.getElementById('species:');
+// let birthPointer = document.getElementById('birth:');
+// let ancestryPointer = document.getElementById('ancestry:');
+
+// let checkNamePointerChild = namePointer.hasChildNodes();
+
+
+// console.log(namePointer.hasChildNodes());
+
+// let testDiv = document.getElementById('testDiv');
+// console.log(testDiv.hasChildNodes())
+
+
+
 let searchBarListener = (data) =>{
     searchBar.addEventListener('keydown' , event=>{
         let searchQuery = searchBar.value.toLowerCase();
         if (event.key === 'Enter' && searchQuery != ''){
             searchBar.value = '';
             let initialSearchResults = data.filter(character => character.name.toLowerCase().includes(searchQuery));
-            console.log(initialSearchResults);
+            // console.log(initialSearchResults);
             displayInitialResults(initialSearchResults);
         }
     })
@@ -54,10 +72,38 @@ let displayInitialResults = (initialSearchResults) =>{
     })
 }
 
+
+// let displaySelectedCharacter = (listOfCharacters , initialSearchResults) =>{
+//     listOfCharacters.addEventListener('click' , event=>{
+//         // console.log(checkNamePointerChild);
+//         // console.log(!checkNamePointerChild);
+//         if (!checkNamePointerChild){
+//             enterPointer(namePointer , 'Name:');
+//             enterPointer(housePointer , 'House:');
+//             enterPointer(speciesPointer, 'Species:');
+//             enterPointer(birthPointer, 'Birth:');
+//             enterPointer(ancestryPointer, 'Ancestry:');
+
+//             let newSpan = document.createElement('span');
+//             newSpan.classList.add('input');
+
+
+//         }
+//     })
+// }
+
+// let enterPointer = (pointer , input) =>{
+//     pointer.textContent = input;
+// }
+
+
+
 let displaySelectedCharacter = (listOfCharacters , initialSearchResults) =>{
     listOfCharacters.addEventListener('click' , event=>{
         nameInput.textContent = initialSearchResults.name;
+        // console.log(nameInput.textContent);
         //name, house, species, DoB, ancestry
+
 
         //comment out the variables that grab the input html elements
         //comment out those elements from the html
@@ -66,8 +112,11 @@ let displaySelectedCharacter = (listOfCharacters , initialSearchResults) =>{
         //then in addClassButton event listener, remove those elements using .remove()
         //will need to use the parents of these elements that they are appended to and use removeChild to target them
         //will require 2 functions listening to a click event for the add to class button
+    
 
-
+        // let newSpan = document.createElement('span');
+        // newSpan.textContent = 'test run';
+        // namePointer.appendChild(newSpan);
 
 
         inputChecker(initialSearchResults , 'house' , houseInput)
@@ -88,6 +137,9 @@ addClassButton.addEventListener('click' , () =>{
         selectedClassNewLi.classList.add('input');
         selectedClassNewLi.classList.add('selectedList');
         selectedClassNewLi.textContent = nameInput.textContent;
+        // console.log(nameInput.textContent);
+        // console.log(selectedClassNewLi.textContent)
+
 
         classSelectedList.append(selectedClassNewLi);
     
@@ -126,7 +178,7 @@ let imageChecker = (initialSearchResults , key , displayedInput) =>{
     }
 }
 
-let clearSearchBar = () =>{
+let clearSearchList = () =>{
     clearListButton.addEventListener('click', () => {
         if (searchBar.value !== ''){
             document.getElementById('search-result-list').textContent='';
