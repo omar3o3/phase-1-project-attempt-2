@@ -30,7 +30,6 @@ let searchBarListener = (data) =>{
         if (event.key === 'Enter' && searchQuery != ''){
             searchBar.value = '';
             let initialSearchResults = data.filter(character => character.name.toLowerCase().includes(searchQuery));
-            console.log(initialSearchResults);
             displayInitialResults(initialSearchResults);
         }
     })
@@ -69,7 +68,9 @@ addClassButton.addEventListener('click' , () =>{
     if (nameInput.textContent != ''){
         let selectedClassNewLi = document.createElement('div');
         selectedClassNewLi.classList.add('input');
+        selectedClassNewLi.classList.add('selectedList');
         selectedClassNewLi.textContent = nameInput.textContent;
+
         classSelectedList.append(selectedClassNewLi);
     
         nameInput.textContent = '';
@@ -78,8 +79,18 @@ addClassButton.addEventListener('click' , () =>{
         speciesInput.textContent = ''; 
         birthInput.textContent = '';
         ancestryInput.textContent = '';
+
+        let deleteButton = document.createElement('button');
+        deleteButton.innerHTML = 'Remove';
+        deleteButton.classList.add('deleteButton');
+        selectedClassNewLi.append(deleteButton);
+        deleteButton.addEventListener('click' , deleteCharacter);
     }
 })
+
+let deleteCharacter = (event) =>{
+    event.target.parentElement.remove();
+}
 
 let inputChecker = (initialSearchResults , key , displayedInput) =>{
     if (initialSearchResults[key] !== ''){
