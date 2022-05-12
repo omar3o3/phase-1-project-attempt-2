@@ -74,8 +74,6 @@ body{
     position: relative;
     right: -30px;
   }
-  
-  
 
   input {
     width: 400px;
@@ -161,7 +159,6 @@ body{
     list-style-position: inside;
     text-align: center;
   }
-
   
   .container-for-selections{
     flex: 1;
@@ -232,7 +229,6 @@ body{
   }
 
   * {cursor: url(https://cur.cursors-4u.net/user/use-1/use160.cur), auto !important;} 
-
   
   .selectedList{
     justify-content: center;
