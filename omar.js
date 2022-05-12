@@ -2,7 +2,7 @@ let dataFetch = () => {fetch('http://hp-api.herokuapp.com/api/characters').then(
 
 dataFetch();
 
-//ignore me
+
 
 let searchBar = document.getElementById('search-bar');
 let charactersReturnedList = document.getElementById('search-result-list');
@@ -22,7 +22,7 @@ let ancestryInput = document.getElementById('ancestry-input');
 let ancestryDiv = document.querySelector('.ancestry-div');
 
 let addClassButton = document.getElementById('add-to-class-button');
-let classSelectedList = document.getElementById('class-selected-list')
+let classSelectedList = document.getElementById('class-selected-list');
 
 let clearListButton = document.getElementById('clearList');
 
@@ -133,32 +133,77 @@ let displaySelectedCharacter = (listOfCharacters , initialSearchResults) =>{
     })
 }
 
-addClassButton.addEventListener('click' , () =>{
-    if (nameInput.textContent != ''){
-        let selectedClassNewLi = document.createElement('div');
-        selectedClassNewLi.classList.add('input');
-        selectedClassNewLi.classList.add('selectedList');
-        selectedClassNewLi.textContent = nameInput.textContent;
-        // console.log(nameInput.textContent);
-        // console.log(selectedClassNewLi.textContent)
+// addClassButton.addEventListener('click' , () =>{
+//     if (nameInput.textContent != ''){
+//         let selectedClassNewLi = document.createElement('div');
+//         selectedClassNewLi.classList.add('input');
+//         selectedClassNewLi.classList.add('selectedList');
+//         selectedClassNewLi.textContent = nameInput.textContent;
+//         // console.log(nameInput.textContent);
+//         // console.log(selectedClassNewLi.textContent)
 
 
-        classSelectedList.append(selectedClassNewLi);
+//         classSelectedList.append(selectedClassNewLi);
     
-        nameInput.textContent = '';
-        houseInput.textContent = '';
-        profileImage.src = 'https://cdn-icons-png.flaticon.com/512/1600/1600953.png';
-        speciesInput.textContent = ''; 
-        birthInput.textContent = '';
-        ancestryInput.textContent = '';
+//         nameInput.textContent = '';
+//         houseInput.textContent = '';
+//         profileImage.src = 'https://cdn-icons-png.flaticon.com/512/1600/1600953.png';
+//         speciesInput.textContent = ''; 
+//         birthInput.textContent = '';
+//         ancestryInput.textContent = '';
 
-        let deleteButton = document.createElement('button');
-        deleteButton.innerHTML = 'Remove';
-        deleteButton.classList.add('deleteButton');
-        selectedClassNewLi.append(deleteButton);
-        deleteButton.addEventListener('click' , deleteCharacter);
-    }
+//         let deleteButton = document.createElement('button');
+//         deleteButton.innerHTML = 'Remove';
+//         deleteButton.classList.add('deleteButton');
+//         selectedClassNewLi.append(deleteButton);
+//         deleteButton.addEventListener('click' , deleteCharacter);
+//     }
+// })
+
+
+
+
+let loadInitialDBData = () => {fetch('http://localhost:3000/members').then(resp => resp.json()).then(data => displayDBData(data))}
+loadInitialDBData();
+
+addClassButton.addEventListener('click' , event =>{
+    let nameInputTextContent = nameInput.textContent;
+    submitNewMember(nameInputTextContent);
 })
+
+
+function submitNewMember(nameInputTextContent) {
+    return fetch('http://localhost:3000/members', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify( {
+            'name': nameInputTextContent
+        })
+    })
+    .then( function (response) {
+        return response.json()
+    })
+    .then( function (data) {
+        displayDBData(data)
+    })
+    .catch( function (error) {
+        console.log(error)
+    })
+}
+
+
+let displayDBData = (data) =>{
+    let selectedClassNewLi = document.createElement('div');
+    selectedClassNewLi.textContent = data.name;
+    classSelectedList.append(selectedClassNewLi);
+}
+
+
+
+
 
 let deleteCharacter = (event) =>{
     event.target.parentElement.remove();
