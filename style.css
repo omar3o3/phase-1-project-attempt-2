@@ -42,13 +42,25 @@ body{
   
   .wrapper{
     margin: auto;
-    width: 60%;
-<<<<<<< HEAD
-    padding: 20px;
-=======
-    padding: 10px;
->>>>>>> main
+    width: 70%;
+    padding: 25px;
     text-align: center;
+  }
+
+  #search-bar {
+    /* position: absolute; */
+    height: 40px;
+    font-size: 30px;
+    padding: 5px;
+    width: 500px;
+    position: relative;
+    left: -10px;
+  }
+
+  .search-icon {
+    position: relative;
+    left: -20px;
+    height: 20px;
   }
   
   input {
@@ -135,7 +147,7 @@ body{
     list-style-position: inside;
     text-align: center;
   }
-  
+
   
   .container-for-selections{
     flex: 1;
