@@ -2,6 +2,8 @@ let dataFetch = () => {fetch('http://hp-api.herokuapp.com/api/characters').then(
 
 dataFetch();
 
+//ignore me
+
 let searchBar = document.getElementById('search-bar');
 let charactersReturnedList = document.getElementById('search-result-list');
 let nameInput = document.getElementById('name-input');
