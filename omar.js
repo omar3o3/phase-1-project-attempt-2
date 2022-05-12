@@ -104,9 +104,6 @@ let displaySelectedCharacter = (listOfCharacters , initialSearchResults) =>{
 
 
 
-// let loadInitialDBData = () => {fetch('http://localhost:3000/members').then(resp => resp.json()).then(data => displayDBData(data))}
-// loadInitialDBData();
-
 document.addEventListener('DOMContentLoaded' , () =>{
     fetch('http://localhost:3000/members').then(resp => resp.json()).then(data => loadInitialData(data))
 })
