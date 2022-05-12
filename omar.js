@@ -35,6 +35,14 @@ let searchBarListener = (data) =>{
     })
 }
 
+searchBar.addEventListener('click' , event=>{
+        while(charactersReturnedList.firstChild){
+            charactersReturnedList.removeChild(charactersReturnedList.lastChild);
+        }
+})
+
+
+
 let displayInitialResults = (initialSearchResults) =>{
     initialSearchResults.forEach(character => {
         let listOfCharacters = document.createElement('div');
