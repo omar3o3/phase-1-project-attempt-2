@@ -9,6 +9,12 @@ body{
     font-family: harryP;
   }
 
+  #audio {
+    position: relative;
+    right: -580px;
+    top: 10px;
+  }
+
   /* .btn {
     font-family: harryP;
     font-size: 15px;
@@ -42,11 +48,33 @@ body{
   
   .wrapper{
     margin: auto;
-    width: 60%;
-    padding: 10px;
+    width: 70%;
+    padding: 25px;
     text-align: center;
   }
+
+  #search-bar {
+    /* position: absolute; */
+    height: 40px;
+    font-size: 30px;
+    padding: 5px;
+    width: 500px;
+    position: relative;
+    left: -10px;
+  }
+
+  .search-icon {
+    position: relative;
+    left: -20px;
+    height: 20px;
+  }
   
+  .deleteButton {
+    font-size: 15px;
+    position: relative;
+    right: -30px;
+  }
+
   input {
     width: 400px;
   }
@@ -138,7 +166,6 @@ body{
     text-align: center;
   }
   
-  
   .container-for-selections{
     flex: 1;
     border:1px solid black;
@@ -208,9 +235,10 @@ body{
   }
 
   * {cursor: url(https://cur.cursors-4u.net/user/use-1/use160.cur), auto !important;} 
-
   
   .selectedList{
     justify-content: center;
     display: flex;
   }
+
+  
