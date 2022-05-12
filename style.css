@@ -1,5 +1,5 @@
 @font-face{
-  src: url(fonts/HARRYP__.TTF);
+  src: url(font/HARRYP__.TTF);
   font-family: harryP;
 }
 
@@ -11,8 +11,12 @@ body{
 
   /* .btn {
     font-family: harryP;
-    font-size: 15px;;
+    font-size: 15px;
   } */
+
+  h2{
+    background-color: rgba(187, 189, 187, .50);
+  }
 
   @keyframes colorRotate {
     from, to { color: darkred; }
@@ -26,6 +30,7 @@ body{
     animation: colorRotate 10s infinite;
     text-align: center;
     transform: translateY(-50%);
+    font-size: 80px;
   }
 
   #title{
@@ -63,7 +68,6 @@ body{
   }
   
   .profile-bar{
-    /* display:flex; */
     flex: 1;
     border:1px solid black;
     text-align: center;
@@ -73,9 +77,9 @@ body{
     display:flex;
     /* flex: 1; */
     align-items:baseline;
-    text-align: center;
     vertical-align: middle;
     text-align: center;
+    justify-content: center;
   } 
   
   
@@ -86,6 +90,7 @@ body{
     text-align: left;
     vertical-align: middle;
     text-align: center;
+    justify-content: center;
   }
   
   .birth-div{
@@ -95,6 +100,7 @@ body{
     text-align: center;
     vertical-align: middle;
     text-align: center;
+    justify-content: center;
   } 
   
   .species-div{
@@ -104,20 +110,22 @@ body{
     text-align: center;
     vertical-align: middle;
     text-align: center;
+    justify-content: center;
   } 
   
   .ancestry-div{
     display:flex;
-    /* flex: 1; */
+    flex: 1;
     align-items:baseline;
     text-align: center;
     vertical-align: middle;
     text-align: center;
+    justify-content: center;
   } 
-  
+
   .search-result{
     flex: 1;
-    align-items: center;
+    /* align-items: center; */
     border:1px solid black;
     /* text-align: center; */
     list-style-position: inside;
@@ -141,11 +149,14 @@ body{
   #search-result-list{
     font-size: 30px;
     background-color: rgba(187, 189, 187, .50);
+    padding: 0px;
   }
   
   #class-selected-list{
     font-size: 30px;
     background-color: rgba(187, 189, 187, .50);
+    padding: 0px;
+    text-align: center;
   }
   
   .visible-learn-more{
@@ -154,21 +165,28 @@ body{
   
   .profile-bar{
     font-size: 25px;
+    /* align-items: center;
+    text-align: center;
+    list-style-position: inside; */
   }
   
   .input{
     background-color: rgba(187, 189, 187, .50);
-    font-size: 30px;
+    font-size: 40px;
   }
   
+  .sub-headers{
+    font-size: 50px;
+  }
+
   .dark-mode {
     background-image: url('https://wallpaperboat.com/wp-content/uploads/2020/08/12/52469/hogwarts-02.jpg');
     object-fit: initial;
-    color: white;
+    /* color: white; */
   }
   
   #mode {
-    background-color: black;
+  background-color: black;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -184,3 +202,9 @@ body{
   }
 
   * {cursor: url(https://cur.cursors-4u.net/user/use-1/use160.cur), auto !important;} 
+
+  
+  .selectedList{
+    justify-content: center;
+    display: flex;
+  }

@@ -36,9 +36,16 @@ let searchBarListener = (data) =>{
     })
 }
 
+searchBar.addEventListener('click' , event=>{
+        while(charactersReturnedList.firstChild){
+            charactersReturnedList.removeChild(charactersReturnedList.lastChild);
+        }
+})
+
 let displayInitialResults = (initialSearchResults) =>{
     initialSearchResults.forEach(character => {
-        let listOfCharacters = document.createElement('li');
+        let listOfCharacters = document.createElement('div');
+        listOfCharacters.classList.add('input');
         listOfCharacters.textContent = character.name;
         charactersReturnedList.append(listOfCharacters);
         displaySelectedCharacter(listOfCharacters , character)
@@ -51,6 +58,17 @@ let displaySelectedCharacter = (listOfCharacters , initialSearchResults) =>{
     listOfCharacters.addEventListener('click' , event=>{
         nameInput.textContent = initialSearchResults.name;
         //name, house, species, DoB, ancestry
+
+        //comment out the variables that grab the input html elements
+        //comment out those elements from the html
+        //instead create those elements within this function
+        //then set the value within this function and append them to the apprioate headers such as 'name:'
+        //then in addClassButton event listener, remove those elements using .remove()
+        //will need to use the parents of these elements that they are appended to and use removeChild to target them
+        //will require 2 functions listening to a click event for the add to class button
+
+
+
 
         inputChecker(initialSearchResults , 'house' , houseInput)
 
@@ -65,17 +83,32 @@ let displaySelectedCharacter = (listOfCharacters , initialSearchResults) =>{
 }
 
 addClassButton.addEventListener('click' , () =>{
-    let selectedClassNewLi = document.createElement('li');
-    selectedClassNewLi.textContent = nameInput.textContent;
-    classSelectedList.append(selectedClassNewLi);
+    if (nameInput.textContent != ''){
+        let selectedClassNewLi = document.createElement('div');
+        selectedClassNewLi.classList.add('input');
+        selectedClassNewLi.classList.add('selectedList');
+        selectedClassNewLi.textContent = nameInput.textContent;
 
-    nameInput.textContent = '';
-    houseInput.textContent = '';
-    profileImage.src = 'https://cdn-icons-png.flaticon.com/512/1600/1600953.png';
-    speciesInput.textContent = ''; 
-    birthInput.textContent = '';
-    ancestryInput.textContent = '';
+        classSelectedList.append(selectedClassNewLi);
+    
+        nameInput.textContent = '';
+        houseInput.textContent = '';
+        profileImage.src = 'https://cdn-icons-png.flaticon.com/512/1600/1600953.png';
+        speciesInput.textContent = ''; 
+        birthInput.textContent = '';
+        ancestryInput.textContent = '';
+
+        let deleteButton = document.createElement('button');
+        deleteButton.innerHTML = 'Remove';
+        deleteButton.classList.add('deleteButton');
+        selectedClassNewLi.append(deleteButton);
+        deleteButton.addEventListener('click' , deleteCharacter);
+    }
 })
+
+let deleteCharacter = (event) =>{
+    event.target.parentElement.remove();
+}
 
 let inputChecker = (initialSearchResults , key , displayedInput) =>{
     if (initialSearchResults[key] !== ''){
@@ -93,10 +126,13 @@ let imageChecker = (initialSearchResults , key , displayedInput) =>{
     }
 }
 
-clearListButton.addEventListener('click', () => {
-    document.getElementById('search-result-list').textContent='';
-})
-
+let clearSearchBar = () =>{
+    clearListButton.addEventListener('click', () => {
+        if (searchBar.value !== ''){
+            document.getElementById('search-result-list').textContent='';
+        }
+    })
+}
 
 let onHoverFunction = event =>{
     event.target.style.color = "orange";
