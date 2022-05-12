@@ -73,6 +73,12 @@ body{
     text-align: center;
   }
   
+  .deleteButton {
+    font-size: 15px;
+    position: relative;
+    right: -30px;
+  }
+
   .name-div{
     display:flex;
     /* flex: 1; */

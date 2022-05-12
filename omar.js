@@ -27,23 +27,6 @@ let classSelectedList = document.getElementById('class-selected-list');
 let clearListButton = document.getElementById('clearList');
 
 
-
-// let namePointer = document.getElementById('name:');
-// let housePointer = document.getElementById('house:');
-// let speciesPointer = document.getElementById('species:');
-// let birthPointer = document.getElementById('birth:');
-// let ancestryPointer = document.getElementById('ancestry:');
-
-// let checkNamePointerChild = namePointer.hasChildNodes();
-
-
-// console.log(namePointer.hasChildNodes());
-
-// let testDiv = document.getElementById('testDiv');
-// console.log(testDiv.hasChildNodes())
-
-
-
 let searchBarListener = (data) =>{
     searchBar.addEventListener('keydown' , event=>{
         let searchQuery = searchBar.value.toLowerCase();
@@ -75,51 +58,9 @@ let displayInitialResults = (initialSearchResults) =>{
 }
 
 
-// let displaySelectedCharacter = (listOfCharacters , initialSearchResults) =>{
-//     listOfCharacters.addEventListener('click' , event=>{
-//         // console.log(checkNamePointerChild);
-//         // console.log(!checkNamePointerChild);
-//         if (!checkNamePointerChild){
-//             enterPointer(namePointer , 'Name:');
-//             enterPointer(housePointer , 'House:');
-//             enterPointer(speciesPointer, 'Species:');
-//             enterPointer(birthPointer, 'Birth:');
-//             enterPointer(ancestryPointer, 'Ancestry:');
-
-//             let newSpan = document.createElement('span');
-//             newSpan.classList.add('input');
-
-
-//         }
-//     })
-// }
-
-// let enterPointer = (pointer , input) =>{
-//     pointer.textContent = input;
-// }
-
-
-
 let displaySelectedCharacter = (listOfCharacters , initialSearchResults) =>{
     listOfCharacters.addEventListener('click' , event=>{
         nameInput.textContent = initialSearchResults.name;
-        // console.log(nameInput.textContent);
-        //name, house, species, DoB, ancestry
-
-
-        //comment out the variables that grab the input html elements
-        //comment out those elements from the html
-        //instead create those elements within this function
-        //then set the value within this function and append them to the apprioate headers such as 'name:'
-        //then in addClassButton event listener, remove those elements using .remove()
-        //will need to use the parents of these elements that they are appended to and use removeChild to target them
-        //will require 2 functions listening to a click event for the add to class button
-    
-
-        // let newSpan = document.createElement('span');
-        // newSpan.textContent = 'test run';
-        // namePointer.appendChild(newSpan);
-
 
         inputChecker(initialSearchResults , 'house' , houseInput)
 
@@ -163,8 +104,28 @@ let displaySelectedCharacter = (listOfCharacters , initialSearchResults) =>{
 
 
 
-let loadInitialDBData = () => {fetch('http://localhost:3000/members').then(resp => resp.json()).then(data => displayDBData(data))}
-loadInitialDBData();
+// let loadInitialDBData = () => {fetch('http://localhost:3000/members').then(resp => resp.json()).then(data => displayDBData(data))}
+// loadInitialDBData();
+
+document.addEventListener('DOMContentLoaded' , () =>{
+    fetch('http://localhost:3000/members').then(resp => resp.json()).then(data => loadInitialData(data))
+})
+
+let loadInitialData = (data) =>{
+    for(const element of data){
+        let selectedClassNewLi = document.createElement('div');
+        selectedClassNewLi.classList.add('input');
+        selectedClassNewLi.classList.add('selectedList');
+        selectedClassNewLi.textContent = element.name;
+        classSelectedList.append(selectedClassNewLi);
+
+        let deleteButton = document.createElement('button');
+        deleteButton.innerHTML = 'Remove';
+        deleteButton.classList.add('deleteButton');
+        selectedClassNewLi.append(deleteButton);
+        deleteButton.addEventListener('click' , deleteCharacter);
+    }
+}
 
 addClassButton.addEventListener('click' , event =>{
     let nameInputTextContent = nameInput.textContent;
@@ -197,8 +158,23 @@ function submitNewMember(nameInputTextContent) {
 
 let displayDBData = (data) =>{
     let selectedClassNewLi = document.createElement('div');
+    selectedClassNewLi.classList.add('input');
+    selectedClassNewLi.classList.add('selectedList');
     selectedClassNewLi.textContent = data.name;
     classSelectedList.append(selectedClassNewLi);
+
+        nameInput.textContent = '';
+        houseInput.textContent = '';
+        profileImage.src = 'https://cdn-icons-png.flaticon.com/512/1600/1600953.png';
+        speciesInput.textContent = ''; 
+        birthInput.textContent = '';
+        ancestryInput.textContent = '';
+
+        let deleteButton = document.createElement('button');
+        deleteButton.innerHTML = 'Remove';
+        deleteButton.classList.add('deleteButton');
+        selectedClassNewLi.append(deleteButton);
+        deleteButton.addEventListener('click' , deleteCharacter);
 }
 
 
