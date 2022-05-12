@@ -4,18 +4,80 @@
     <meta charset="UTF-8">
     <title>Flatiron Harry Potter Database</title>
     <link rel="stylesheet" href="style.css">
-    <script defer type="text/javascript" src="script.js"></script>
+    <script defer type="text/javascript" src="omar.js"></script>
+    
 </head>
-
 <body>
+    <div id = 'title'>
+        <h1 class="theTitle">Welcome to Flatiron Harry Potter Database</h1>
+    </div>
     <div>
-    <h1>Welcome to Flatiron Harry Potter Database</h1>
+      <button id='mode' onclick="darkMode()">Dark <br>
+          Mode</button>
     </div>
 
-    <div class="topnav">
-        <a class="active" href="#home">Home</a>
-        <input type="text" placeholder="Search..">
+    <!-- Search Bar -->
+    <div class="wrapper">
+        <img class="search-icon" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDU2Ljk2NiA1Ni45NjYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDU2Ljk2NiA1Ni45NjY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPHBhdGggZD0iTTU1LjE0Niw1MS44ODdMNDEuNTg4LDM3Ljc4NmMzLjQ4Ni00LjE0NCw1LjM5Ni05LjM1OCw1LjM5Ni0xNC43ODZjMC0xMi42ODItMTAuMzE4LTIzLTIzLTIzcy0yMywxMC4zMTgtMjMsMjMgIHMxMC4zMTgsMjMsMjMsMjNjNC43NjEsMCw5LjI5OC0xLjQzNiwxMy4xNzctNC4xNjJsMTMuNjYxLDE0LjIwOGMwLjU3MSwwLjU5MywxLjMzOSwwLjkyLDIuMTYyLDAuOTIgIGMwLjc3OSwwLDEuNTE4LTAuMjk3LDIuMDc5LTAuODM3QzU2LjI1NSw1NC45ODIsNTYuMjkzLDUzLjA4LDU1LjE0Niw1MS44ODd6IE0yMy45ODQsNmM5LjM3NCwwLDE3LDcuNjI2LDE3LDE3cy03LjYyNiwxNy0xNywxNyAgcy0xNy03LjYyNi0xNy0xN1MxNC42MSw2LDIzLjk4NCw2eiIgZmlsbD0iIzAwMDAwMCIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+        <input id="search-bar" class="search" placeholder="Who are you looking for?" type="text">
+    </div>
+    <div class = 'div-box-for-float'>
+      <div class = 'profile-bar'>
+        <div id = 'image-div'>
+          <img id = 'character-image' src="https://cdn-icons-png.flaticon.com/512/1600/1600953.png" alt="search result image">
+        </div>
+        <div id = 'add-to-class-div'>
+          <button type = 'button' id = 'add-to-class-button'>Add to Your Quidditch Team</button>
+        </div>
+        <div>
+          <button onclick="toggleVisibility()">Learn More</button>
+        </div>
+        <div class = 'name-div'>
+          <h3 id = 'name:' class = 'input'>Name:</h3>
+          <span id = 'name-input' class = 'input'></span>
+        </div>
+        <div class = 'house-div'>
+          <h3 id = 'house:' class = 'input'>House: </h3>
+          <span id = 'house-input' class = 'input'></span>
+        </div>
+        <div id = 'learn-more-sub-section' class = "visible-learn-more">
+          <div class = 'species-div'>
+            <h3 id = 'species:' class = 'input'>Species:</h3>
+            <span id = 'species-input' class = 'input'></span>
+          </div>
+          <div class = 'birth-div'>
+            <h3 id = 'birth:' class = 'input'>Date of Birth:</h3>
+            <span id = 'birth-input' class = 'input'></span>
+          </div>
+          <div class = 'ancestry-div'>
+            <h3 id = 'ancestry:' class = 'input'>Ancestry:</h3>
+            <span id = 'ancestry-input' class = 'input'></span>
+          </div>
+        </div>
       </div>
+      <div class = 'search-result'>
+        <div>
+          <h2 id = 'search-header' class = 'sub-headers'>
+            Search Results:
+          </h2>
+        </div>
+        <div>
+          <button id="clearList">Clear List</button>
+        </div>
+        <div>
+          <ul id = 'search-result-list'></ul>
+        </div>
+      </div>
+      <div class = 'container-for-selections'>
+        <div>
+          <h2 id = 'selected-class-header' class = 'sub-headers'>
+            Your Quidditch Team:
+          </h2>
+        </div>
+        <div>
+          <ul id = 'class-selected-list'></ul>
+        </div>
+      </div>
+    </div>
 </body>
-
-</html>
+</head>
