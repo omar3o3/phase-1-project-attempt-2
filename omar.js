@@ -30,6 +30,7 @@ let searchBarListener = (data) =>{
         if (event.key === 'Enter' && searchQuery != ''){
             searchBar.value = '';
             let initialSearchResults = data.filter(character => character.name.toLowerCase().includes(searchQuery));
+            console.log(initialSearchResults);
             displayInitialResults(initialSearchResults);
         }
     })
@@ -59,6 +60,17 @@ let displaySelectedCharacter = (listOfCharacters , initialSearchResults) =>{
     listOfCharacters.addEventListener('click' , event=>{
         nameInput.textContent = initialSearchResults.name;
         //name, house, species, DoB, ancestry
+
+        //comment out the variables that grab the input html elements
+        //comment out those elements from the html
+        //instead create those elements within this function
+        //then set the value within this function and append them to the apprioate headers such as 'name:'
+        //then in addClassButton event listener, remove those elements using .remove()
+        //will need to use the parents of these elements that they are appended to and use removeChild to target them
+        //will require 2 functions listening to a click event for the add to class button
+
+
+
 
         inputChecker(initialSearchResults , 'house' , houseInput)
 
@@ -96,6 +108,9 @@ addClassButton.addEventListener('click' , () =>{
     }
 })
 
+
+
+
 let deleteCharacter = (event) =>{
     event.target.parentElement.remove();
 }
@@ -116,9 +131,18 @@ let imageChecker = (initialSearchResults , key , displayedInput) =>{
     }
 }
 
-clearListButton.addEventListener('click', () => {
-    document.getElementById('search-result-list').textContent='';
-})
+let clearSearchBar = () =>{
+    clearListButton.addEventListener('click', () => {
+        if (searchBar.value !== ''){
+            document.getElementById('search-result-list').textContent='';
+        }
+    })
+}
+// clearListButton.addEventListener('click', () => {
+//     if (searchBar.value !== ''){
+//         document.getElementById('search-result-list').textContent='';
+//     }
+// })
 
 
 let onHoverFunction = event =>{
