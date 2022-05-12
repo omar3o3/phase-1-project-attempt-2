@@ -9,10 +9,10 @@ body{
     font-family: harryP;
   }
 
-  .btn {
+  /* .btn {
     font-family: harryP;
     font-size: 15px;;
-  }
+  } */
 
   @keyframes colorRotate {
     from, to { color: darkred; }
