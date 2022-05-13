@@ -12,8 +12,9 @@ body{
 
   #audio {
     position: relative;
-    right: -580px;
     top: 10px;
+    margin: auto;
+    display: block;
   }
 
   h2{
