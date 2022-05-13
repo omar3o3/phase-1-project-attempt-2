@@ -97,8 +97,6 @@ let loadInitialData = (data) =>{
         deleteButton.classList.add('deleteButton');
         selectedClassNewLi.append(deleteButton);
 
-        console.log(element.id)
-
         deleteButton.addEventListener('click' , (event) =>{
             deleteCharacter(`${element.id}` , event)
         } )
@@ -122,8 +120,8 @@ let deleteCharacter = (idValue , event) => {
 
 
 addClassButton.addEventListener('click' , event =>{
-    if (nameInputTextContent !== ''){
         let nameInputTextContent = nameInput.textContent;
+        if (nameInputTextContent !== ''){
         submitNewMember(nameInputTextContent);
     }
 })
