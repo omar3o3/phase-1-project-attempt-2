@@ -1,12 +1,3 @@
 {
-  "members": [
-    {
-      "name": "Severus Snape",
-      "id": 1
-    },
-    {
-      "name": "Neville Longbottom",
-      "id": 2
-    }
-  ]
+  "members": []
 }
