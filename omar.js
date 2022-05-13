@@ -33,7 +33,6 @@ let searchBarListener = (data) =>{
         if (event.key === 'Enter' && searchQuery != ''){
             searchBar.value = '';
             let initialSearchResults = data.filter(character => character.name.toLowerCase().includes(searchQuery));
-            // console.log(initialSearchResults);
             displayInitialResults(initialSearchResults);
         }
     })
@@ -51,7 +50,9 @@ let displayInitialResults = (initialSearchResults) =>{
         listOfCharacters.classList.add('input');
         listOfCharacters.textContent = character.name;
         charactersReturnedList.append(listOfCharacters);
+
         displaySelectedCharacter(listOfCharacters , character)
+
         listOfCharacters.addEventListener('mouseover' , onHoverFunction);
         listOfCharacters.addEventListener('mouseout' , offHoverFunction);
     })
@@ -74,36 +75,6 @@ let displaySelectedCharacter = (listOfCharacters , initialSearchResults) =>{
     })
 }
 
-// addClassButton.addEventListener('click' , () =>{
-//     if (nameInput.textContent != ''){
-//         let selectedClassNewLi = document.createElement('div');
-//         selectedClassNewLi.classList.add('input');
-//         selectedClassNewLi.classList.add('selectedList');
-//         selectedClassNewLi.textContent = nameInput.textContent;
-//         // console.log(nameInput.textContent);
-//         // console.log(selectedClassNewLi.textContent)
-
-
-//         classSelectedList.append(selectedClassNewLi);
-    
-//         nameInput.textContent = '';
-//         houseInput.textContent = '';
-//         profileImage.src = 'https://cdn-icons-png.flaticon.com/512/1600/1600953.png';
-//         speciesInput.textContent = ''; 
-//         birthInput.textContent = '';
-//         ancestryInput.textContent = '';
-
-//         let deleteButton = document.createElement('button');
-//         deleteButton.innerHTML = 'Remove';
-//         deleteButton.classList.add('deleteButton');
-//         selectedClassNewLi.append(deleteButton);
-//         deleteButton.addEventListener('click' , deleteCharacter);
-//     }
-// })
-
-
-
-
 document.addEventListener('DOMContentLoaded' , () =>{
     fetch('http://localhost:3000/members').then(resp => resp.json()).then(data => loadInitialData(data))
 })
@@ -116,17 +87,45 @@ let loadInitialData = (data) =>{
         selectedClassNewLi.textContent = element.name;
         classSelectedList.append(selectedClassNewLi);
 
+        let selectedClassIdHolder = document.createElement('p');
+        selectedClassIdHolder.classList.add('hiddenIdValues');
+        selectedClassIdHolder.textContent = element.id;
+        classSelectedList.append(selectedClassIdHolder);
+
         let deleteButton = document.createElement('button');
         deleteButton.innerHTML = 'Remove';
         deleteButton.classList.add('deleteButton');
         selectedClassNewLi.append(deleteButton);
-        deleteButton.addEventListener('click' , deleteCharacter);
+
+        console.log(element.id)
+
+        deleteButton.addEventListener('click' , (event) =>{
+            deleteCharacter(`${element.id}` , event)
+        } )
     }
 }
 
+let deleteCharacter = (idValue , event) => {
+
+    event.target.parentElement.remove();
+
+    fetch(`http://localhost:3000/members/${idValue}` , {
+        method: 'DELETE',
+        headers:{
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        }
+    })
+    .then(resp => resp.json())
+    .catch(error => console.log(error))
+}
+
+
 addClassButton.addEventListener('click' , event =>{
-    let nameInputTextContent = nameInput.textContent;
-    submitNewMember(nameInputTextContent);
+    if (nameInputTextContent !== ''){
+        let nameInputTextContent = nameInput.textContent;
+        submitNewMember(nameInputTextContent);
+    }
 })
 
 
@@ -160,26 +159,25 @@ let displayDBData = (data) =>{
     selectedClassNewLi.textContent = data.name;
     classSelectedList.append(selectedClassNewLi);
 
+    let selectedClassIdHolder = document.createElement('p');
+    selectedClassIdHolder.classList.add('hiddenIdValues');
+    selectedClassIdHolder.textContent = data.id;
+
+    let deleteButton = document.createElement('button');
+    deleteButton.innerHTML = 'Remove';
+    deleteButton.classList.add('deleteButton');
+    selectedClassNewLi.append(deleteButton);
+
+    deleteButton.addEventListener('click' , (event) =>{
+        deleteCharacter(`${data.id}` , event)
+    })
+
         nameInput.textContent = '';
         houseInput.textContent = '';
         profileImage.src = 'https://cdn-icons-png.flaticon.com/512/1600/1600953.png';
         speciesInput.textContent = ''; 
         birthInput.textContent = '';
         ancestryInput.textContent = '';
-
-        let deleteButton = document.createElement('button');
-        deleteButton.innerHTML = 'Remove';
-        deleteButton.classList.add('deleteButton');
-        selectedClassNewLi.append(deleteButton);
-        deleteButton.addEventListener('click' , deleteCharacter);
-}
-
-
-
-
-
-let deleteCharacter = (event) =>{
-    event.target.parentElement.remove();
 }
 
 let inputChecker = (initialSearchResults , key , displayedInput) =>{
