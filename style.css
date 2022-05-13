@@ -7,18 +7,15 @@ body{
     background-image: url('https://images.ctfassets.net/usf1vwtuqyxm/71J6YPxNauhFABbjHpGluJ/631bd6980b0a430d5b476ef331abb2b5/release_1_hogwarts.png');
     object-fit:initial ;
     font-family: harryP;
+    background-attachment: fixed;
   }
+
 
   #audio {
     position: relative;
     right: -580px;
     top: 10px;
   }
-
-  /* .btn {
-    font-family: harryP;
-    font-size: 15px;
-  } */
 
   h2{
     background-color: rgba(187, 189, 187, .50);
@@ -51,6 +48,28 @@ body{
     width: 70%;
     padding: 25px;
     text-align: center;
+  }
+
+  .search-result {
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1; 
+    }
+     
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #888; 
+    }
+    
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555; 
+    }
   }
 
   #search-bar {
